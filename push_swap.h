@@ -38,4 +38,14 @@ void    swap_b(t_stack **b);
 void swap_a_and_b(t_stack **a, t_stack **b);
 void push_a_to_b(t_stack **a, t_stack **b);
 void push_b_to_a(t_stack **a, t_stack **b);
+int check_valid_number(const char *str);
+int check_duplicate(t_stack *stack, int number);
+int check_in_range(int num);
+
+/////////////////
+
+void delete_first_node(t_stack **k);
+void rotate_a(t_stack **a);
+
+void rotate_b(t_stack **b);
 #endif
