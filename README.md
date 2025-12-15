@@ -86,7 +86,6 @@ You have a set of operations (instructions) to manipulate the stacks, and you mu
 <h2  style="font-size: 27px;"> 📚 Resources </h2>
 <h4 style="font-size: 20px;"> Useful Links:</h4>
 <ul>
-<li> <a url="https://42-cursus.gitbook.io/guide/2-rank-02/push_swap"> Push_swap Tutorial (42 Docs)</a> </li>
-<li> <a url="https://www.geeksforgeeks.org/dsa/stack-data-structure/"> Stack Data Structure</a></li>
-
+<li> <a href="https://42-cursus.gitbook.io/guide/2-rank-02/push_swap"> Push_swap Tutorial (42 Docs)</a> </li>
+<li> <a href="https://www.geeksforgeeks.org/dsa/stack-data-structure/"> Stack Data Structure</a></li>
 </ol>
