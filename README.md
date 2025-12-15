@@ -81,8 +81,24 @@ You have a set of operations (instructions) to manipulate the stacks, and you mu
   </tr>
 </table>
 
+<h2 style="font-size: 27px;">📁 Project Structure </h2>
 
-
+<pre style="font-family: 'Courier New', monospace; background: #7c817875; padding: 20px; border-radius: 5px;">
+push_swap/
+├── srcs/
+│   ├── main.c
+│   ├── swap.c
+│   ├──  push.c
+│   ├── rotate.c
+│   ├──  reverse_rotate.c
+│   ├──  .c
+│   ├── .c
+│   ├──  .c
+├── includes/
+│   └── push_swap.h
+├── Makefile
+└── README.md
+</pre>
 <h2  style="font-size: 27px;"> 📚 Resources </h2>
 <h4 style="font-size: 20px;"> Useful Links:</h4>
 <ul>
