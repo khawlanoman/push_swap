@@ -6,7 +6,7 @@
 /*   By: khnoman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:20:43 by khnoman           #+#    #+#             */
-/*   Updated: 2025/12/11 11:20:49 by khnoman          ###   ########.fr       */
+/*   Updated: 2025/12/15 18:14:58 by khnoman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,11 @@ int	ft_atoi(const char *ptr)
 		}
 		i++;
 	}
-	while (ptr[i] >= '0' && ptr[i] <= '9')
-	{
-		result = result * 10 + (ptr[i] - '0');
-		i++;
-	}
+	while (ptr[i++] >= '0' && ptr[i++] <= '9')
+		result = result * 10 + (ptr[i++] - '0');
 	return (result * sign);
 }
+
 char	*ft_strdup(const char *s)
 {
 	size_t	i;
@@ -63,7 +61,6 @@ char	*ft_strdup(const char *s)
 	i = 0;
 	if (!s)
 		return (NULL);
-	
 	len = ft_strlen(s);
 	str = malloc((len + 1) * sizeof(char));
 	if (!str)
@@ -78,6 +75,7 @@ char	*ft_strdup(const char *s)
 	str[i] = '\0';
 	return (str);
 }
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;

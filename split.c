@@ -6,11 +6,11 @@
 /*   By: khnoman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:21:59 by khnoman           #+#    #+#             */
-/*   Updated: 2025/12/11 11:22:00 by khnoman          ###   ########.fr       */
+/*   Updated: 2025/12/15 16:57:42 by khnoman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
+
 static int	count_words(char const *s, char c)
 {
 	int	i;
