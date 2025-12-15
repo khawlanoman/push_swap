@@ -9,7 +9,6 @@
 /*   Updated: 2025/12/11 11:21:17 by khnoman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
 void    swap_a(t_stack **a)
@@ -110,7 +109,7 @@ void push_a_to_b(t_stack **a, t_stack **b)
         *a = first ->next;
         free(first);
     }
-    write(1,"pa ",3);
+    write(1,"pb ",3);
 }
 
 void push_b_to_a(t_stack **a, t_stack **b)
@@ -129,7 +128,7 @@ void push_b_to_a(t_stack **a, t_stack **b)
         *b = first ->next;
         free(first);
     }    
-    write(1,"pb ",3);
+    write(1,"pa ",3);
 }
 //////////////////////rotates
 void rotate_a(t_stack **a)
@@ -151,40 +150,74 @@ void rotate_b(t_stack **b)
 
     first = *b;
     last = ft_stack_new(first->num);
+    last->index = first->index;
     delete_first_node(b);
     ft_lstadd_back(b,last);
      write(1,"rb ",3);
 }
 
-void    rotate_a and_b(t_stack **a, t_stack **b)
+void    rotate_a_and_b(t_stack **a, t_stack **b)
 {
 
-     t_stack *first;
+    t_stack *first;
     t_stack *last;
 
     first = *a;
     last = ft_stack_new(first->num);
+    last->index = first->index;
     delete_first_node(a);
     ft_lstadd_back(a,last);
 
     first = *b;
     last = ft_stack_new(first->num);
+    last->index = first->index;
     delete_first_node(b);
     ft_lstadd_back(b,last);
      write(1,"rr ",3);
 }
 
 //////////////////////revers rotates
-void rotate_a(t_stack **a)
+void revers_rotate_a(t_stack **a)
 {
     t_stack *first;
     t_stack *last;
 
-    last = ft_lstlast(&a);
+    last = ft_lstlast(*a);
     first = ft_stack_new(last->num);
-    delete_last_node(last);
+    first->index = last->index;
+    delete_last_node(a);
     ft_lstadd_front(a,first);
-     write(1,"ra ",3);
+    write(1,"rra ",4);
 }
 
+void revers_rotate_b(t_stack **b)
+{
+    t_stack *first;
+    t_stack *last;
 
+    last = ft_lstlast(*b);
+    first = ft_stack_new(last->num);
+    first->index = last->index;
+    delete_last_node(b);
+    ft_lstadd_front(b,first);
+    write(1,"rrb ",4);
+}
+
+void revers_rotate_a_and_b(t_stack **a, t_stack **b)
+{
+    t_stack *first;
+    t_stack *last;
+
+    last = ft_lstlast(*a);
+    first = ft_stack_new(last->num);
+    first->index = last->index;
+    delete_last_node(a);
+    ft_lstadd_front(a,first);
+
+    last = ft_lstlast(*b);
+    first = ft_stack_new(last->num);
+    first->index = last->index;
+    delete_last_node(b);
+    ft_lstadd_front(b,first);
+    write(1,"rrr ",4);
+}

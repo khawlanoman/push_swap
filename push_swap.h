@@ -43,9 +43,13 @@ int check_duplicate(t_stack *stack, int number);
 int check_in_range(int num);
 
 /////////////////
-
 void delete_first_node(t_stack **k);
+void delete_last_node(t_stack **k);
 void rotate_a(t_stack **a);
-
 void rotate_b(t_stack **b);
+//////////////////////
+
+void revers_rotate_a(t_stack **a);
+void revers_rotate_b(t_stack **b);
+void revers_rotate_a_and_b(t_stack **a, t_stack **b);
 #endif

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   helper2.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khnoman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/13 18:26:17 by khnoman           #+#    #+#             */
+/*   Updated: 2025/12/13 18:26:19 by khnoman          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "push_swap.h"
 
 int check_valid_number(const char *str)
@@ -46,7 +57,6 @@ void delete_first_node(t_stack **k)
     tmp = *k;
     *k = tmp->next;
     free(tmp);
-
 }
 
 /////////
@@ -54,7 +64,7 @@ void delete_last_node(t_stack **k)
 {
      t_stack  *tmp;
      t_stack *last;
-    tmp = *a;
+    tmp = *k;
     while (tmp ->next != NULL)
     {
         last = tmp ;

@@ -56,14 +56,19 @@ int main(int argc, char **argv)
         }
          i++;
     }
-  // swap_a(&a);
-   push_a_to_b(&a,&b);
-   push_a_to_b(&a,&b);
- //push_b_to_a(&a,&b);
- //swap_b(&b);
- //swap_a_and_b(&a, &b);
-   // rotate_a(&a);
+    //swap_a(&a);
+    push_a_to_b(&a,&b);
+    push_a_to_b(&a,&b);
+    push_a_to_b(&a,&b);
+    push_a_to_b(&a,&b);
+    //push_b_to_a(&a,&b);
+    //swap_b(&b);
+    //swap_a_and_b(&a, &b);
+    //rotate_a(&a);
     //rotate_b(&b);
+    //revers_rotate_a(&a);
+    //revers_rotate_b(&b);
+    revers_rotate_a_and_b(&a, &b);
    printf("\nstack a\n");
     while (a)
     {
@@ -76,5 +81,4 @@ int main(int argc, char **argv)
        printf("index :%d :value:%d \n",b->index,b->num);
       b = b->next;
     }
-    
 }
