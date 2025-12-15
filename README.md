@@ -1,11 +1,20 @@
 <h1 style="font-size: 30px; color: rgba(255, 255, 128, 0.5);">🔄 PUSH_SWAP</h1>
 <br/>
-<h2 style="font-size: 27px;"> 🎯 Overview </h2>
+<h2  style="font-size: 27px;">📋 Table of Contents</h2>
+<ul>
+<li><a href="#soverview"> Overview </a></li>
+<li><a href="#Project_Description"> Project Description </a></li>
+<li><a href="#Rules"> Rules </a></li>
+<li><a href="#Project_Structure"> Project Structure </a></li>
+<li><a href="#Resources"> Resources </a></li>
+
+</ul>
+<h2 style="font-size: 27px;" id="overview"> 🎯 Overview </h2>
 <p> Push_swap is a program that sorts a list of integers using two stacks (a and b) and a limited set of operations.<br/>
 It prints the sequence of operations needed to sort the numbers in ascending order.<br/>
 The goal is to sort efficiently while handling errors and minimizing the number of moves.</p>
 
-<h2 style="font-size: 27px;"> 📖 Project Description</h2>
+<h2 style="font-size: 27px;"id="Project_Description"> 📖 Project Description</h2>
 <p>
 You have two stacks named <span style="font-size: 17px; color:#28C775;">a </span>and <span style="font-size: 17px; color:#28C775;">b</span>. At the beginning:
 
@@ -16,7 +25,7 @@ You have two stacks named <span style="font-size: 17px; color:#28C775;">a </spa
 You have a set of operations (instructions) to manipulate the stacks, and you must use these operations to sort the numbers with the minimum possible moves.
 </p>
 
-<h2 style="font-size: 27px;"> 🎮 Rules </h2>
+<h2 style="font-size: 27px;" id="Rules"> 🎮 Rules </h2>
 <h3>Allowed Operations: </h3>
 <table border="1">
   <tr>
@@ -81,7 +90,7 @@ You have a set of operations (instructions) to manipulate the stacks, and you mu
   </tr>
 </table>
 
-<h2 style="font-size: 27px;">📁 Project Structure </h2>
+<h2 style="font-size: 27px;" id="Project_Structure">📁 Project Structure </h2>
 
 <pre style="font-family: 'Courier New', monospace; background: #7c817875; padding: 20px; border-radius: 5px;">
 push_swap/
@@ -99,9 +108,9 @@ push_swap/
 ├── Makefile
 └── README.md
 </pre>
-<h2  style="font-size: 27px;"> 📚 Resources </h2>
+<h2  style="font-size: 27px;" id="Resources"> 📚 Resources </h2>
 <h4 style="font-size: 20px;"> Useful Links:</h4>
 <ul>
 <li> <a href="https://42-cursus.gitbook.io/guide/2-rank-02/push_swap"> Push_swap Tutorial (42 Docs)</a> </li>
 <li> <a href="https://www.geeksforgeeks.org/dsa/stack-data-structure/"> Stack Data Structure</a></li>
-</ol>
+</ul>
