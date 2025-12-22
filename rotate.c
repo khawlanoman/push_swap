@@ -20,10 +20,12 @@ void	rotate_a(t_stack **a)
 		return ;
 	first = *a;
 	last = ft_stack_new(first->num);
+	last->index = first->index;
 	delete_first_node(a);
 	ft_lstadd_back(a, last);
 	write(1, "ra ", 3);
 }
+
 
 void	rotate_b(t_stack **b)
 {

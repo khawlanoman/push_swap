@@ -15,7 +15,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-
+# include <limits.h>
 typedef struct s_stack
 {
 	int				num;
@@ -27,7 +27,7 @@ int		check_valid_number(const char *str);
 int		check_duplicate(t_stack *stack, int number);
 int		check_in_range(int num);
 int		ft_lstsize(t_stack *lst);
-int		ft_atoi(const char *ptr);
+int		ft_atoi(const char *ptr, int *error);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s);
 char	**ft_split(char const *s, char c);
@@ -49,4 +49,20 @@ void	revers_rotate_a_and_b(t_stack **a, t_stack **b);
 size_t	ft_strlen(const char *s);
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_stack_new(int value);
+//////////////
+int *stack_to_array(t_stack *a,int size);
+void sort_array(int *arr,int size);
+int get_index(int *sort, int size, int value);
+void add_index_to_node(t_stack **a);
+/////////////////////
+void sort2(t_stack *k);
+void sort3(t_stack **k);
+void sort4(t_stack **k, t_stack **l);
+void sort5(t_stack **k, t_stack **l);
+
+
+
+//////////////////////////
+void check_and_push_to_b(t_stack **a,t_stack **b);
+
 #endif

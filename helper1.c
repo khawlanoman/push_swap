@@ -24,14 +24,18 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int	ft_atoi(const char *ptr)
+int	ft_atoi(const char *ptr, int *error)
 {
 	int	i;
 	int	sign;
-	int	result;
+	long	result;
+	*error = 0;
 
 	if (!ptr)
+	{
+		*error = 1;
 		return (0);
+	}
 	i = 0;
 	sign = 1;
 	result = 0;
@@ -42,14 +46,30 @@ int	ft_atoi(const char *ptr)
 	if (ptr[i] == '-' || ptr[i] == '+')
 	{
 		if (ptr[i] == '-')
-		{
 			sign *= (-1);
+		i++;
+	}
+	if (ptr[i] < '0' || ptr[i] > '9') 
+	{
+		*error = 1;
+		return (0);
+	}
+	while (ptr[i] >= '0' && ptr[i] <= '9')
+	{
+		result = result * 10 + (ptr[i] - '0');
+		if ((sign == 1 && result > INT_MAX) || (sign == -1 && -result < INT_MIN))
+		{
+			*error = 1;
+			return (0);
 		}
 		i++;
 	}
-	while (ptr[i++] >= '0' && ptr[i++] <= '9')
-		result = result * 10 + (ptr[i++] - '0');
-	return (result * sign);
+	if (ptr[i] != '\0')
+	{
+		*error = 1;
+		return (0);
+	}
+	return (int)(result * sign);
 }
 
 char	*ft_strdup(const char *s)
