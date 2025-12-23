@@ -78,3 +78,19 @@ void add_index_to_node(t_stack **a)
     }
     free(sort);
 }
+
+void fix_position(t_stack **a)
+{
+    t_stack *tmp;
+    int p;
+
+    tmp = *a;
+    p = 0;
+    while (tmp)
+    {
+        tmp->position = p;
+        p++;
+        tmp = tmp->next;
+    }
+    
+}

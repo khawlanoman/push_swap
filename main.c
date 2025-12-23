@@ -20,11 +20,12 @@ int main(int argc, char **argv)
     int i;
     int j;
     int error;
-
+    int p;
     a = NULL;
     b = NULL;
     i = 1;
     j = 0;
+    p = 0;
     if (argc < 2)
         return (0);
     while (i < argc)
@@ -48,6 +49,7 @@ int main(int argc, char **argv)
             }
             int number = (int)num;
             new_node = ft_stack_new(number);
+            new_node->position = p++;
             ft_lstadd_back(&a,new_node);
             j++;
         }
@@ -55,7 +57,7 @@ int main(int argc, char **argv)
     }
     add_index_to_node(&a);
 
-    if (ft_lstsize(a) == 2)
+   if (ft_lstsize(a) == 2)
     {
         sort2(a);
     }
@@ -91,16 +93,26 @@ int main(int argc, char **argv)
     //revers_rotate_b(&b);
     //revers_rotate_a_and_b(&a, &b);
    //rotate_a_and_b(&a, &b);
+   calculate_cost_b(&b);
+  // printf("%d",find_best_cost(&b));
+   move_it_to_top(&b,&a);
+   rotate_a(&a);
+    move_it_to_top(&b,&a);
+    rotate_a(&a);
+     move_it_to_top(&b,&a);
+     rotate_a(&a);
+     move_it_to_top(&b,&a);
+    
    printf("\nstack a\n");
     while (a)
     {
-       printf(" index :%d :value:%d \n",a->index,a->num);
+       printf(" index :%d :value:%d position:%d\n",a->index,a->num,a->position);
        a = a->next;
     }
     printf("stack b\n");
     while (b)
     {
-       printf("index :%d :value:%d \n",b->index,b->num);
+       printf("index :%d :value:%d position:%d cost:%d move: %d\n",b->index,b->num,b->position, b->cost_b, b->move);
       b = b->next;
     }
 }

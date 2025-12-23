@@ -25,6 +25,8 @@ void	push_a_to_b(t_stack **a, t_stack **b)
 	*a = first ->next;
 	free(first);
 	write(1, "pb ", 3);
+	fix_position(a);
+	fix_position(b);
 }
 
 void	push_b_to_a(t_stack **a, t_stack **b)
@@ -41,4 +43,6 @@ void	push_b_to_a(t_stack **a, t_stack **b)
 	*b = first ->next;
 	free(first);
 	write(1, "pa ", 3);
+	fix_position(a);
+	fix_position(b);
 }

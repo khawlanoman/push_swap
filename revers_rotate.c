@@ -24,6 +24,8 @@ void	revers_rotate_a(t_stack **a)
 	delete_last_node(a);
 	ft_lstadd_front(a, first);
 	write(1, "rra ", 4);
+	fix_position(a);
+
 }
 
 void	revers_rotate_b(t_stack **b)
@@ -39,6 +41,7 @@ void	revers_rotate_b(t_stack **b)
 	delete_last_node(b);
 	ft_lstadd_front(b, first);
 	write(1, "rrb ", 4);
+	fix_position(b);
 }
 
 void	revers_rotate_a_and_b(t_stack **a, t_stack **b)
@@ -60,4 +63,6 @@ void	revers_rotate_a_and_b(t_stack **a, t_stack **b)
 	delete_last_node(b);
 	ft_lstadd_front(b, first);
 	write(1, "rrr ", 4);
+	fix_position(a);
+	fix_position(b);
 }

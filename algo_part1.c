@@ -35,5 +35,87 @@ void check_and_push_to_b(t_stack **a,t_stack **b)
         }
     }
     sort3(a);
+}
 
+int find_target(t_stack **a, t_stack **b)
+{
+    t_stack *tmp;
+    int best_index;
+
+    tmp = *a;
+    best_index = tmp->index;
+    while (tmp)
+    {
+       if ((tmp->index > (*b)->index) && (tmp->index < best_index))
+       {
+            best_index = tmp->index;
+       }
+       tmp = tmp->next;
+    }
+    return (best_index);
+}
+
+void calculate_cost_b(t_stack **b)
+{
+    t_stack *tmp;
+    int size;
+
+    tmp = *b;
+    size = ft_lstsize(tmp);
+    while (tmp)
+    {
+        if (tmp->position <= size/2)
+        {
+           tmp->cost_b =tmp->position;
+           tmp->move = 1;
+        }
+        else
+        {
+            tmp->cost_b = size - tmp->position;
+             tmp->move = 0;
+        }
+        tmp = tmp->next;
+    }
+}
+
+int find_best_cost(t_stack **b)
+{
+    t_stack *tmp;
+    int best_cost;
+
+    tmp = *b;
+    best_cost = tmp->cost_b;
+    while (tmp)
+    {
+        if (tmp->cost_b < best_cost)
+        {
+            best_cost = tmp->cost_b;
+        }
+        tmp = tmp->next;
+    }
+    return (best_cost);
+}
+
+void move_it_to_top(t_stack **b,t_stack **a)
+{
+    t_stack *tmp;
+    //int best_cost;
+    int num_move;
+
+    tmp = *b;
+    num_move = tmp->cost_b;
+    //best_cost = find_best_cost(b);
+    while ( num_move > 0)
+    {
+       if (tmp->move == 0)
+       {
+            rotate_b(b);
+       }
+       else if (tmp->move == 1)
+       {
+            revers_rotate_b(b);
+       }
+       num_move--;
+    }
+    push_b_to_a(a,b);
 }

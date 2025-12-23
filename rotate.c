@@ -24,6 +24,7 @@ void	rotate_a(t_stack **a)
 	delete_first_node(a);
 	ft_lstadd_back(a, last);
 	write(1, "ra ", 3);
+	fix_position(a);
 }
 
 
@@ -40,6 +41,7 @@ void	rotate_b(t_stack **b)
 	delete_first_node(b);
 	ft_lstadd_back(b, last);
 	write(1, "rb ", 3);
+	fix_position(b);
 }
 
 void	rotate_a_and_b(t_stack **a, t_stack **b)
@@ -61,4 +63,6 @@ void	rotate_a_and_b(t_stack **a, t_stack **b)
 	delete_first_node(b);
 	ft_lstadd_back(b, last);
 	write(1, "rr ", 3);
+	fix_position(a);
+	fix_position(b);
 }

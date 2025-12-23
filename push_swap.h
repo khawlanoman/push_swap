@@ -20,6 +20,9 @@ typedef struct s_stack
 {
 	int				num;
 	int				index;
+	int				position;
+	int				cost_b;
+	int				move;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -60,9 +63,13 @@ void sort3(t_stack **k);
 void sort4(t_stack **k, t_stack **l);
 void sort5(t_stack **k, t_stack **l);
 
-
-
+///////////////////////////
+void fix_position(t_stack **a);
+int find_best_cost(t_stack **b);
+void calculate_cost_b(t_stack **b);
 //////////////////////////
 void check_and_push_to_b(t_stack **a,t_stack **b);
-
+int find_target(t_stack **a, t_stack **b);
+/////
+void move_it_to_top(t_stack **b,t_stack **a);
 #endif
