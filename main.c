@@ -65,19 +65,14 @@ int main(int argc, char **argv)
     {
         sort3(&a);
     }
-    if (ft_lstsize(a) == 4)
+    else
     {
-        sort4(&a, &b);
-    }
-    if (ft_lstsize(a) == 5)
-    {
-        sort5(&a,&b);
-    }
-    else if (ft_lstsize(a) > 5)
-    {
-        check_and_push_to_b(&a,&b);
-    }
+        check_and_push_to_b(&a, &b);  
+        push_back_to_a(&a, &b); 
+        final_rotate(&a); 
     
+
+    }
     
     //swap_a(&a);
     //push_a_to_b(&a,&b);
@@ -93,15 +88,15 @@ int main(int argc, char **argv)
     //revers_rotate_b(&b);
     //revers_rotate_a_and_b(&a, &b);
    //rotate_a_and_b(&a, &b);
-   calculate_cost_b(&b);
+ //  calculate_cost_b(&b);
   // printf("%d",find_best_cost(&b));
-   move_it_to_top(&b,&a);
-   rotate_a(&a);
-    move_it_to_top(&b,&a);
-    rotate_a(&a);
-     move_it_to_top(&b,&a);
-     rotate_a(&a);
-     move_it_to_top(&b,&a);
+  // move_it_to_top(&b,&a);
+  // rotate_a(&a);
+   // move_it_to_top(&b,&a);
+   // rotate_a(&a);
+    // move_it_to_top(&b,&a);
+    // rotate_a(&a);
+    // move_it_to_top(&b,&a);
     
    printf("\nstack a\n");
     while (a)

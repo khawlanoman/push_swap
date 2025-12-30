@@ -26,6 +26,14 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+typedef struct s_cost
+{
+    int a;
+    int b;
+    int move_a;
+    int move_b;
+}   t_cost;
+
 int		check_valid_number(const char *str);
 int		check_duplicate(t_stack *stack, int number);
 int		check_in_range(int num);
@@ -65,11 +73,17 @@ void sort5(t_stack **k, t_stack **l);
 
 ///////////////////////////
 void fix_position(t_stack **a);
-int find_best_cost(t_stack **b);
+//int find_best_cost(t_stack **b);
 void calculate_cost_b(t_stack **b);
 //////////////////////////
 void check_and_push_to_b(t_stack **a,t_stack **b);
-int find_target(t_stack **a, t_stack **b);
+t_stack	*find_best_cost(t_stack **b, t_stack **a);
 /////
-void move_it_to_top(t_stack **b,t_stack **a);
+//void move_b_to_top(t_stack **b, t_stack *node);
+
+void    do_rr_or_rrr(t_stack **a, t_stack **b, t_cost *c);
+////
+void final_rotate(t_stack **a);
+void calculate_cost_b(t_stack **b);
+void push_back_to_a(t_stack **a, t_stack **b);
 #endif
