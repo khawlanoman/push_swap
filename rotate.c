@@ -27,7 +27,6 @@ void	rotate_a(t_stack **a)
 	fix_position(a);
 }
 
-
 void	rotate_b(t_stack **b)
 {
 	t_stack	*first;

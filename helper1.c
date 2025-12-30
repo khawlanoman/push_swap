@@ -6,7 +6,7 @@
 /*   By: khnoman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:20:43 by khnoman           #+#    #+#             */
-/*   Updated: 2025/12/15 18:14:58 by khnoman          ###   ########.fr       */
+/*   Updated: 2025/12/30 13:06:44 by khnoman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ size_t	ft_strlen(const char *s)
 
 int	ft_atoi(const char *ptr, int *error)
 {
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 	long	result;
-	*error = 0;
 
+	*error = 0;
 	if (!ptr)
 	{
 		*error = 1;
@@ -49,7 +49,7 @@ int	ft_atoi(const char *ptr, int *error)
 			sign *= (-1);
 		i++;
 	}
-	if (ptr[i] < '0' || ptr[i] > '9') 
+	if (ptr[i] < '0' || ptr[i] > '9')
 	{
 		*error = 1;
 		return (0);
@@ -57,7 +57,8 @@ int	ft_atoi(const char *ptr, int *error)
 	while (ptr[i] >= '0' && ptr[i] <= '9')
 	{
 		result = result * 10 + (ptr[i] - '0');
-		if ((sign == 1 && result > INT_MAX) || (sign == -1 && -result < INT_MIN))
+		if ((sign == 1 && result > INT_MAX)
+			|| (sign == -1 && (-result) < INT_MIN))
 		{
 			*error = 1;
 			return (0);
@@ -69,7 +70,7 @@ int	ft_atoi(const char *ptr, int *error)
 		*error = 1;
 		return (0);
 	}
-	return (int)(result * sign);
+	return ((int)(result * sign));
 }
 
 char	*ft_strdup(const char *s)

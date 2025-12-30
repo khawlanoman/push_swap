@@ -25,7 +25,6 @@ void	revers_rotate_a(t_stack **a)
 	ft_lstadd_front(a, first);
 	write(1, "rra ", 4);
 	fix_position(a);
-
 }
 
 void	revers_rotate_b(t_stack **b)
