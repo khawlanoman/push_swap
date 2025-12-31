@@ -26,3 +26,19 @@ void free_split(char **res)
     free(res);
 }
 
+void free_stack(t_stack **s)
+{
+    t_stack *tmp;
+    t_stack *n;
+
+    if (!s)
+       return;
+    tmp = *s;
+    while (tmp)
+    {
+      n = tmp->next;
+     free(tmp);
+     tmp = n;
+    }
+    *s = NULL;
+}

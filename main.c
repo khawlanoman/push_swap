@@ -72,16 +72,19 @@ int main(int argc, char **argv)
         push_back_to_a(&a, &b); 
         final_rotate(&a);
     }
-   printf("\nstack a\n");
+    /*printf("\nstack a\n");
     while (a)
     {
-       printf(" index :%d :value:%d position:%d\n",a->index,a->num,a->position);
-       a = a->next;
+        printf(" index :%d :value:%d position:%d\n",a->index,a->num,a->position);
+        a = a->next;
     }
     printf("stack b\n");
     while (b)
     {
-       printf("index :%d :value:%d position:%d cost:%d move: %d\n",b->index,b->num,b->position, b->cost_b, b->move);
-      b = b->next;
-    }
+        printf("index :%d :value:%d position:%d cost:%d move: %d\n",b->index,b->num,b->position, b->cost_b, b->move);
+        b = b->next;
+    }*/
+    free_stack(&a);
+    free_stack(&b);
+    return (0);
 }

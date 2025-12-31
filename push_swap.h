@@ -78,6 +78,7 @@ void	final_rotate(t_stack **a);
 void	calculate_cost_b(t_stack **b);
 void	push_back_to_a(t_stack **a, t_stack **b);
 void	free_split(char **res);
+void	free_stack(t_stack **s);
 size_t	ft_strlen(const char *s);
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_stack_new(int value);
