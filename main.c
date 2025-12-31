@@ -59,20 +59,16 @@ int main(int argc, char **argv)
     add_index_to_node(&a);
 
    if (ft_lstsize(a) == 2)
-    {
         sort2(a);
-    }
-    if (ft_lstsize(a) == 3)
-    {
+   else if (ft_lstsize(a) == 3)
         sort3(&a);
-    }
     else
     {
         check_and_push_to_b(&a, &b);  
         push_back_to_a(&a, &b); 
         final_rotate(&a);
     }
-    /*printf("\nstack a\n");
+   /* printf("\nstack a\n");
     while (a)
     {
         printf(" index :%d :value:%d position:%d\n",a->index,a->num,a->position);

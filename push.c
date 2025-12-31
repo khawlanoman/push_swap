@@ -24,7 +24,7 @@ void	push_a_to_b(t_stack **a, t_stack **b)
 	ft_lstadd_front(b, new_node);
 	*a = first ->next;
 	free(first);
-	write(1, "pb ", 3);
+	write(1, "pb\n", 3);
 	fix_position(a);
 	fix_position(b);
 }
@@ -42,7 +42,7 @@ void	push_b_to_a(t_stack **a, t_stack **b)
 	ft_lstadd_front(a, new_node);
 	*b = first ->next;
 	free(first);
-	write(1, "pa ", 3);
+	write(1, "pa\n", 3);
 	fix_position(a);
 	fix_position(b);
 }

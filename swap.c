@@ -27,7 +27,7 @@ void	swap_a(t_stack **a)
 	swap = second->index;
 	second->index = tmp->index;
 	tmp->index = swap;
-	write (1, "sa ", 3);
+	write (1, "sa\n", 3);
 	fix_position(a);
 }
 
@@ -47,7 +47,7 @@ void	swap_b(t_stack **b)
 	swap = second->index;
 	second->index = tmp->index;
 	tmp->index = swap;
-	write (1, "sb ", 3);
+	write (1, "sb\n", 3);
 	fix_position(b);
 }
 
@@ -90,7 +90,7 @@ void	swap_a_and_b(t_stack **a, t_stack **b)
 		return ;
 	swap_a_for_ss(a);
 	swap_b_for_ss(b);
-	write(1, "ss ", 3);
+	write(1, "ss\n", 3);
 	fix_position(a);
 	fix_position(b);
 }
