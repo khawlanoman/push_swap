@@ -46,6 +46,7 @@ int		find_target(t_stack **a, t_stack *b_node);
 int		*stack_to_array(t_stack *a, int size);
 int		get_position(t_stack **stack, int index);
 int		get_index(int *sort, int size, int value);
+int		free_and_write_error(t_stack **a, t_stack **b, char **res);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s);
 char	**ft_split(char const *s, char c);
