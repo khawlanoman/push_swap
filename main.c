@@ -32,19 +32,19 @@ int main(int argc, char **argv)
     {
         
         char **res= ft_split(argv[i], ' ');
+        if (!res || !res[0])
+        {
+            write (2, "Error\n", 6);
+            return (0);
+        }
+        
        j = 0;
         while (res[j])
         {
-            if ((check_valid_number(res[j]) == 0 ) ||check_duplicate(a, ft_atoi(res[j],&error))== 0 )
-            {
-                write (1, "Error\n", 6);
-                        return (0);
-            }
-            
             long num = ft_atoi(res[j],&error);
-            if (error)
+            if (error || (check_valid_number(res[j]) == 0 ) ||check_duplicate(a, ft_atoi(res[j],&error))== 0 )
             {
-                write (1, "Error\n", 6);
+                write (2, "Error\n", 6);
                         return (0);
             }
             int number = (int)num;
@@ -53,7 +53,8 @@ int main(int argc, char **argv)
             ft_lstadd_back(&a,new_node);
             j++;
         }
-         i++;
+        free_split(res);
+        i++;
     }
     add_index_to_node(&a);
 
@@ -69,35 +70,8 @@ int main(int argc, char **argv)
     {
         check_and_push_to_b(&a, &b);  
         push_back_to_a(&a, &b); 
-        final_rotate(&a); 
-    
-
+        final_rotate(&a);
     }
-    
-    //swap_a(&a);
-    //push_a_to_b(&a,&b);
-   //push_a_to_b(&a,&b);
-    //push_a_to_b(&a,&b);
-   // push_a_to_b(&a,&b);
-    //push_b_to_a(&a,&b);
-    //swap_b(&b);
-    //swap_a_and_b(&a, &b);
-    //rotate_a(&a);
-    //rotate_b(&b);
-    //revers_rotate_a(&a);
-    //revers_rotate_b(&b);
-    //revers_rotate_a_and_b(&a, &b);
-   //rotate_a_and_b(&a, &b);
- //  calculate_cost_b(&b);
-  // printf("%d",find_best_cost(&b));
-  // move_it_to_top(&b,&a);
-  // rotate_a(&a);
-   // move_it_to_top(&b,&a);
-   // rotate_a(&a);
-    // move_it_to_top(&b,&a);
-    // rotate_a(&a);
-    // move_it_to_top(&b,&a);
-    
    printf("\nstack a\n");
     while (a)
     {

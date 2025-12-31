@@ -51,15 +51,12 @@ void	swap_b(t_stack **b)
 	fix_position(b);
 }
 
-void	swap_a_and_b(t_stack **a, t_stack **b)
+static void	swap_a_for_ss(t_stack **a)
 {
 	t_stack	*tmp;
 	t_stack	*second;
 	int		swap;
 
-	if ((!a || !(*a) || !b || !(*b))
-		|| (ft_lstsize(*a) < 2 || ft_lstsize(*b) < 2))
-		return ;
 	tmp = *a;
 	second = tmp->next;
 	swap = second->num;
@@ -68,6 +65,14 @@ void	swap_a_and_b(t_stack **a, t_stack **b)
 	swap = second->index;
 	second->index = tmp->index;
 	tmp->index = swap;
+}
+
+static void	swap_b_for_ss(t_stack **b)
+{
+	t_stack	*tmp;
+	t_stack	*second;
+	int		swap;
+
 	tmp = *b;
 	second = tmp->next;
 	swap = second->num;
@@ -76,6 +81,15 @@ void	swap_a_and_b(t_stack **a, t_stack **b)
 	swap = second->index;
 	second->index = tmp->index;
 	tmp->index = swap;
+}
+
+void	swap_a_and_b(t_stack **a, t_stack **b)
+{
+	if ((!a || !(*a) || !b || !(*b))
+		|| (ft_lstsize(*a) < 2 || ft_lstsize(*b) < 2))
+		return ;
+	swap_a_for_ss(a);
+	swap_b_for_ss(b);
 	write(1, "ss ", 3);
 	fix_position(a);
 	fix_position(b);
