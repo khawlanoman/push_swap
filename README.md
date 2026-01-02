@@ -1,8 +1,10 @@
+<h3 style="color:gray">This project has been created as part of the 42 curriculum by <span style="color:#28C775">khnoman</span></h3>
 <h1 style="font-size: 30px; color: rgba(255, 255, 128, 0.5);">🔄 PUSH_SWAP</h1>
 <br/>
 <h2  style="font-size: 27px;">📋 Table of Contents</h2>
 <ul>
 <li><a href="#soverview"> Overview </a></li>
+<li><a href="#Installation">Installation</a></li>
 <li><a href="#Project_Description"> Project Description </a></li>
 <li><a href="#Rules"> Rules </a></li>
 <li><a href="#Project_Structure"> Project Structure </a></li>
@@ -13,7 +15,35 @@
 <p> Push_swap is a program that sorts a list of integers using two stacks (a and b) and a limited set of operations.<br/>
 It prints the sequence of operations needed to sort the numbers in ascending order.<br/>
 The goal is to sort efficiently while handling errors and minimizing the number of moves.</p>
+<div>
+<h2 style="font-size: 27px;" id="Installation"> 🛠️ Installation</h2>
+<h3> Clone the repository</h3>
+<code> git clone < my_repositry_ulr > push_swap
+<br/>
+cd push_swap
+</code>
 
+<h3> compile the project</h3>
+<code> make</code>
+
+<h3> How to Run</h3>
+<code>./push_swap 3 5 34 8 -3</code>
+
+<h3>Output</h3>
+<code>
+pb <br/>
+ra <br/>
+ra <br/>
+ra <br/>
+pb <br/>
+sa <br/>
+ra <br/>
+pa <br/>
+ra <br/>
+pa <br/>
+rra
+</code>
+</div>
 <h2 style="font-size: 27px;"id="Project_Description"> 📖 Project Description</h2>
 <p>
 You have two stacks named <span style="font-size: 17px; color:#28C775;">a </span>and <span style="font-size: 17px; color:#28C775;">b</span>. At the beginning:
@@ -94,17 +124,23 @@ You have a set of operations (instructions) to manipulate the stacks, and you mu
 
 <pre style="font-family: 'Courier New', monospace; background: #7c817875; padding: 20px; border-radius: 5px;">
 push_swap/
-├── srcs/
-│   ├── main.c
-│   ├── swap.c
-│   ├──  push.c
-│   ├── rotate.c
-│   ├──  reverse_rotate.c
-│   ├──  .c
-│   ├── .c
-│   ├──  .c
-├── includes/
-│   └── push_swap.h
+├── main.c
+├── swap.c
+├── push.c
+├── rotate.c
+├── reverse_rotate.c
+├── algo_part1.c
+├──algo_part2.c
+├── algo_part3.c
+├── fix_index.c
+├── fix_index.c
+├── free_it.c
+├── helper1.c
+├── helper2.c
+├── helper3.c
+├── sorts.c
+├── split.c
+└── push_swap.h
 ├── Makefile
 └── README.md
 </pre>
@@ -113,4 +149,5 @@ push_swap/
 <ul>
 <li> <a href="https://42-cursus.gitbook.io/guide/2-rank-02/push_swap"> Push_swap Tutorial (42 Docs)</a> </li>
 <li> <a href="https://www.geeksforgeeks.org/dsa/stack-data-structure/"> Stack Data Structure</a></li>
-</ul>
+<li><a href="https://www.youtube.com/watch?v=wRvipSG4Mmk&themeRefresh=1">push_swap tutorial video<a/></li>
+</ul
